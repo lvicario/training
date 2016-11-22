@@ -23,8 +23,18 @@ class exampleClass{
     }
 }
 
-$test = new exampleClass();
+
+class childExampleClass extends exampleClass {
+  public function show($var) {
+    echo "$var : " . $this->$var;
+  }
+}
+$test = new childExampleClass();
 $test->name ="Test";
+$test->show('name');
+
 $test->age = 12;
-$test->qualificaion = "Ph. of D";
+$test->qualification = "Ph. of D";
+$test->show('qualification');
+$test->show('age');
 // echo $test->age;
