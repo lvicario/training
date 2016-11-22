@@ -12,16 +12,26 @@ class CommandChain
   }
   public function runCommand( $name, $args )
   {
+    $flag = FALSE;
     foreach( $this->_commands as $cmd )
     {
-      if ( $cmd->onCommand( $name, $args ) )
-      {
-        echo "<br/>";
-        return;
-      } else {
-        echo "Command $name not found.<br/>";
-        return;
+      $cmd_result = $cmd->onCommand( $name, $args );
+      if ($cmd_result['flag']) {
+        $flag = TRUE;
       }
+      // if ( $cmd->onCommand( $name, $args ) )
+      // {
+      //   echo "<br/>";
+      //   return;
+      // } else {
+      //   echo "Command $name not found.<br/>";
+      //   return;
+      // }
+    }
+    if ($flag) {
+      echo $cmd_result['result'];
+    } else {
+      echo "Command $name not found.<br/>";
     }
   }
 }
@@ -29,18 +39,22 @@ class UserCommand implements ICommand
 {
   public function onCommand( $name, $args )
   {
-    if ( $name != 'addUser' ) return false;
-    echo( "UserCommand handling 'addUser'" );
-    return true;
+    if ( $name != 'addUser' ) return array('flag' => false);
+    return array(
+      'flag' => true,
+      'result' => "UserCommand handling 'addUser'",
+    );
   }
 }
 class MailCommand implements ICommand
 {
   public function onCommand( $name, $args )
   {
-    if ( $name != 'mail' ) return false;
-    echo( "MailCommand handling 'mail'" );
-    return true;
+    if ( $name != 'mail' ) return array('flag' => false);
+    return array(
+      'flag' => true,
+      'result' => "MailCommand handling 'mail'",
+      );
   }
 }
 $cc = new CommandChain();
