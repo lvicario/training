@@ -25,6 +25,10 @@ class exampleClass{
 
 
 class childExampleClass extends exampleClass {
+
+  private function __construct() {
+    // PSeudo code
+  }
   public function show($var) {
     echo "$var : " . $this->$var;
   }
@@ -36,5 +40,5 @@ $test->show('name');
 $test->age = 12;
 $test->qualification = "Ph. of D";
 $test->show('qualification');
-$test->show('age');
+// $test->show('age');
 // echo $test->age;
