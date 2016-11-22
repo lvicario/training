@@ -1,4 +1,7 @@
 <?php
+
+// Factory Design Pattern
+
 abstract class Product {
   private $sku_code;
   private $name;
