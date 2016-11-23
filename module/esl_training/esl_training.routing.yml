@@ -1,0 +1,7 @@
+esl_training.esl_config:
+  path: admin/config/hello/{name}
+  defaults:
+    _controller: Drupal\esl_training\Controller\MyController::sayHello
+    _title: 'Say hello'
+  requirements:
+    _permission: 'access content'

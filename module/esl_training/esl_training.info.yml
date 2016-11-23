@@ -1,5 +1,6 @@
 name: ESL Training
-description: ""
+description: "ESL Training module"
 type: module
 core: 8.x
 package: 'Custom'
+configure: 'esl_training.esl_config'
