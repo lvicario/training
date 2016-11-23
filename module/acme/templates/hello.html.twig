@@ -1,0 +1,38 @@
+{% include 'modules/custom/acme/templates/extra.html.twig' %}
+{% set default_value = 'Pokemon Go !!' %}
+{% macro displayinputtext(type, name, classname, value) %}
+  <div>
+  {% set defaultVal = "Pokemon Go!!" %}
+    {% if type == "text" %}
+      <input type="text" name="{{ name|default('default') }}" class="{{ classname|default('simple') }}" value="{{ value|default(defaultVal) }}"/>
+    {% elseif type == "select" %}
+      <select name="{{ name|default('default') }}" class="{{ classname|default('simple') }}">
+        {% for option in value %}
+          <option> {{ option }} </option>
+        {% endfor %}
+      </select>
+    {% else %}
+      <textarea name="{{ name|default('default') }}" class="{{ classname|default('simple') }}"> {{ value|default(defaultVal) }}</textarea>
+    }
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% import _self as form %}
+<div class="acme-hello-text">
+    <h1>{{ data.greetings }} {{ data.name|upper }}</h1>
+</div>
+{{ form.displayinputtext('text', 'username', 'user') }}
+{{ form.displayinputtext() }}
+{{ form.displayinputtext('select', 'username', 'user', [1,2,3,4,5,6]) }}
+<ul id="navigation">
+{% for item in data.user %}
+    <li><a href="{{ item }}">{{ item }}</a></li>
+{% endfor %}
+</ul>
+{% include 'core/modules/comment/templates/comment.html.twig' ignore missing with {'parent' : 'Comments section'} %}
+{% verbatim %}
+  {% for item in items %}
+    <h3> {{ item }} </h3>h3>
+  {% endfor %}
+{% endverbatim %}
