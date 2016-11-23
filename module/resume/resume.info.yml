@@ -1,0 +1,5 @@
+name: ESL Resume
+description: A ESL Resume form to enter user details.
+core: 8.x
+package: Custom
+type: module
