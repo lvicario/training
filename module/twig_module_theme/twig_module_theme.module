@@ -1,0 +1,15 @@
+<?php
+
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+
+function twig_module_theme_theme(){
+	$theme['twig_module_theme'] = [
+    'variables' => ['data' => NULL],
+    'template' => 'twig_module_theme',
+  ];
+  return $theme;
+}

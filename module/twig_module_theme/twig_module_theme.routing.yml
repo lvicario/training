@@ -1,0 +1,6 @@
+twig_module_theme.twigtest:
+  path: "twigtest"
+  defaults:
+    _controller: 'Drupal\twig_module_theme\Controller\TwigModuleTheme::renderTemplate'
+  requirements:
+    _permission: "access content"

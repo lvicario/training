@@ -1,0 +1,60 @@
+{% include "modules/twig_module_theme/templates/twig_extends_module_theme.html.twig" %}
+
+{# Twig Tags #}
+<p>
+{% filter e|lower %}
+Multiline text here
+{% endfilter %}
+</p>
+
+<p>
+{{ "Multiline text here"|e|lower }}
+</p>
+
+{% if data %}
+	<ul>
+	{% for item in data %}
+		<li>{{ item }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+
+{% import "modules/twig_module_theme/templates/twig_module_theme_macro.html.twig" as myCustomMacro %}
+{{ myCustomMacro.myMacro("XYZ") }}
+
+{% set varname = "Var name" %}
+
+<p>{{ varname }}</p>
+
+<p>
+{% spaceless %}
+  Spaceless text
+{% endspaceless %}
+</p>
+{{ " Spaceless text "|trim }}
+
+{# Twig Filters #}
+<p>
+{{ "caps"|capitalize|reverse }}
+</p>
+
+<p>
+{{ data|join(", ") }}
+</p>
+
+{{ 20.80|number_format }}
+<p>
+{{ "<div>Div content</div>"|striptags }}
+</p>
+
+{{ "hello"|t }}
+
+<p>
+{% trans %}
+ds
+d
+sd
+{% endtrans %}
+</p>
+
+<a href={{ url("twig_module_theme.twigtest") }}>Click</a>
