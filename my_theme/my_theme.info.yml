@@ -1,0 +1,15 @@
+name: My Custom Theme
+type: theme
+base theme: classy
+description: D8 training theme
+version: VERSION
+core: 8.x
+libraries:
+  - my_theme/global-styling
+
+regions:
+   header: 'Header'
+   left_sidebar: 'Left Sidebar'
+   content: 'Main Content'
+   right_sidebar: 'Right Sidebar'
+   footer: 'Footer'

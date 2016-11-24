@@ -1,0 +1,66 @@
+body {
+
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+
+}
+
+main {
+  overflow: hidden;
+}
+
+.left-sidebar,
+.right-sidebar,
+.main-content {
+  float: left;
+  margin: 0 2%;
+}
+
+.left-sidebar {
+  float: left;
+  width: 20%;
+
+}
+
+.right-sidebar {
+  float: left;
+  width: 20%;
+}
+
+.main-content {
+  float: left;
+  width: 48%;
+}
+
+footer {
+
+}
+
+/* Navigation */
+nav {
+
+}
+nav ul {
+  
+}
+nav li {
+  display: inline;
+}
+nav a {
+  display: inline-block;
+  padding: 2px 5px;
+}
+
+/* Article */
+.views-field-title {
+  
+}
+.views-field-body {
+  overflow: hidden;
+  max-height: 100px;
+}
