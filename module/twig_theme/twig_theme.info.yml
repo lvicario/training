@@ -1,0 +1,13 @@
+name: Twig theme
+description: ""
+type: theme
+core: 8.x
+
+regions:
+  header: "Header"
+  leftsidebar: "Left Side Bar"
+  maincontent: "Main content"
+  xyz: "XYZ"
+
+libraries:
+  - twig_theme/global-style

@@ -1,0 +1,7 @@
+global-style:
+  css:
+    theme:
+      css/style.css: {}
+selected_pages:
+  js:
+    js/script.js: {}

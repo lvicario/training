@@ -1,0 +1,4 @@
+twit_theme.projector:
+  label: projector
+  mediaQuery: 'all and (min-width: 2000px)'
+  weight: 0
